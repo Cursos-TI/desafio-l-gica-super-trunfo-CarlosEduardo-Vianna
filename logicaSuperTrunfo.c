@@ -7,6 +7,7 @@ int main() {
     char codigocarta1[4], codigocarta2[4];
     unsigned long int populacao1, populacao2;
     int pontosturisticos1, pontosturisticos2;
+    int atributo;
     float pib1, pib2;
     float area1, area2;
     float densidade1, densidade2;
@@ -105,8 +106,20 @@ int main() {
 
     // COMPARAÇÕES
     printf("\n*** Comparação de Cartas ***\n");
+    printf("Escolha qual atributo vai ser compararado\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos turisticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("6. PIB per capita\n");
+    printf("7. Super poder\n");
+    scanf("%d", &atributo);
 
-    // População
+    switch (atributo) //menu interativo
+    {
+    case 1:
+         // População
     printf("\nAtributo: População\n");
     printf("Carta 1 (%s): %lu\n", cidade1, populacao1);
     printf("Carta 2 (%s): %lu\n", cidade2, populacao2);
@@ -117,8 +130,9 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
-    // Área
+        break;
+    case 2:
+         // Área
     printf("\nAtributo: Área\n");
     printf("Carta 1 (%s): %.2f km²\n", cidade1, area1);
     printf("Carta 2 (%s): %.2f km²\n", cidade2, area2);
@@ -129,7 +143,8 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
+        break;
+    case 3:
     // PIB
     printf("\nAtributo: PIB\n");
     printf("Carta 1 (%s): %.2f bilhões\n", cidade1, pib1);
@@ -141,7 +156,8 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
+        break;
+    case 4:
     // Pontos turísticos
     printf("\nAtributo: Pontos Turísticos\n");
     printf("Carta 1 (%s): %i\n", cidade1, pontosturisticos1);
@@ -153,7 +169,8 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
+        break;
+    case 5:
     // Densidade (menor vence)
     printf("\nAtributo: Densidade Populacional\n");
     printf("Carta 1 (%s): %.2f hab/km²\n", cidade1, densidade1);
@@ -165,7 +182,8 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
+        break;
+    case 6:
     // PIB per capita
     printf("\nAtributo: PIB per Capita\n");
     printf("Carta 1 (%s): %.2f reais\n", cidade1, pibper1);
@@ -177,8 +195,9 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
-
-    // Super poder
+        break;
+    case 7:
+      // Super poder
     printf("\nAtributo: Super Poder\n");
     printf("Carta 1 (%s): %.2f\n", cidade1, superpoder1);
     printf("Carta 2 (%s): %.2f\n", cidade2, superpoder2);
@@ -189,6 +208,12 @@ int main() {
     } else {
         printf("Resultado: Empate!\n");
     }
+       break;
+    default:
+       printf("Opção invalida");
+       break;
+    }
+    
 
     return 0;
 }
